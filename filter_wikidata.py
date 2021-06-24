@@ -152,7 +152,6 @@ def prune_triples(file, worker_id):
 # Dict Extraction                                   #
 #####################################################
 def extract_english_labels(s, p, o, labels):
-    # TODO filter out string keys (subjects)
     if re.match(ENGLISH_LABELS_PATTERN, o):
         if p == "<http://schema.org/name>" or p.endswith("altLabel"):
             s = s.rsplit("/", 1)[1][:-1]

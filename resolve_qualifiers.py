@@ -9,7 +9,7 @@ DUMP_SPECIFICATION = "wikidata_clean"
 PATH_TO_INPUT_FILE = "dumps/" + DUMP_SPECIFICATION + ".nt"
 PATH_TO_UNIQUE_PREDICATES_DUMP = "tmp_dumps//" + DUMP_SPECIFICATION + "_unique_predicates.csv"
 PATH_TO_QUALIFIER_DUMP = "tmp_dumps//" + DUMP_SPECIFICATION + "_qualifiers_resolved.csv"
-PATH_TO_OUTPUT_FILE = "dumps/" + DUMP_SPECIFICATION + "_old.csv"
+PATH_TO_OUTPUT_FILE = "dumps/" + DUMP_SPECIFICATION + ".csv"
 
 TYPE_PATTERN = re.compile("Q[0-9]+\-[0-9]+")
 
@@ -158,9 +158,7 @@ def prune_duplicate_lines():
                         if o == o_s:
                             # get stored predicate
                             p_s = triples[s][o_s]
-                            # if same: we are at qualifier predicate, otherwise: direct predicate which can be pruned
-                            # if p == p_s:
-                            # continue_flag = True
+                            # check if direct predicate which can be pruned
                             if not p == p_s and p.split("-")[0] == p_s.split("-")[0]:
                                 continue_flag = True
                         elif p.split("-")[0] == "P31":
