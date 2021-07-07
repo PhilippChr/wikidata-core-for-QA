@@ -15,6 +15,7 @@ Run:
 wikidata_dump_path: specifies the path to the n-triples Wikidata dump.  
 number_of_workers: specifies the number of processes (or workers) that are run in parallel.
 
+Our filtered dump (applied to the n-triples Wikidata dump from April 2020) is available here (around 43 GB): https://conquer.mpi-inf.mpg.de/static/wikidata_clean.zip.
  
 ## Duration (using 13 workers)
 * split (2 TB dump) 			=> ~ 8h  
