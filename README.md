@@ -1,6 +1,6 @@
 # Wikidata Core for Question Answering
 
-This is a joint project with Magdalena Kaiser (https://github.com/magkai) to prepare a n-triples Wikidata (https://www.wikidata.org/) dump for QA access.
+This is a joint project with Magdalena Kaiser (https://github.com/magkai) to prepare an n-triples Wikidata (https://www.wikidata.org/) dump for QA access.
 Triples that are not required (for most QA tasks) are filtered, and intermediate nodes (known as CVTs)
 are resolved, by making predicates unique. The project is organized as a pipeline, so individual steps
 can be skipped or modified.
