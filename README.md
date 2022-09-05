@@ -24,4 +24,4 @@ Our filtered dump (applied to the n-triples Wikidata dump from April 2020) is av
 * resolve_qualifiers			=> ~ 11h
 
 # License
-This project by Magdalena Kaiser and Philipp Christmann is licensed under MIT license.
+This project by [Magdalena Kaiser](https://people.mpi-inf.mpg.de/~mkaiser/) and [Philipp Christmann](https://people.mpi-inf.mpg.de/~pchristm/) is licensed under MIT license.
