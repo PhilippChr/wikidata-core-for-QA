@@ -82,6 +82,8 @@ def prune_triples(file, worker_id):
             """ 
             Prune triples
             """
+            if filter_predicates_as_subjects(s):
+                continue
             if filter_schema_predicates(p):
                 continue
             if filter_values(s, o):
@@ -183,6 +185,8 @@ def extract_english_descriptions(s, p, o, descriptions):
 
 
 def extract_wikipedia_mappings(s, p, o, wikipedia, inverse_wikipedia_mappings):
+    if p != "<http://schema.org/about>":
+        return
     if s.startswith("<https://en.wikipedia.org/wiki/") and o.startswith("<http://www.wikidata.org/entity/"):
         wikipedia_name = s.replace("<https://en.wikipedia.org/wiki/", "")[:-1]
         wikidata_id = o.rsplit("/", 1)[1][:-4]
@@ -201,9 +205,9 @@ def filter_non_wikidata_subjects(s):
 
 
 def filter_non_wikidata_id_subjects(s):
-    if "<http://www.wikidata.org/entity/Q" in s:
+    if "<http://www.wikidata.org/entity/" in s:
         return False
-    if "<http://www.wikidata.org/entity/statement/Q" in s:
+    if "<http://www.wikidata.org/entity/statement/" in s:
         return False
     return True
 
